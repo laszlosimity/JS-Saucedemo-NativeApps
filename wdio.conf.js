@@ -10,9 +10,7 @@ exports.config = {
     // should work too though). These services define specific user and key (or access key)
     // values you need to put in here in order to connect to these services.
     //
-    user: process.env.SAUCE_USERNAME,
-    key: process.env.SAUCE_ACCESS_KEY,
-    region: 'eu',
+    testobject_dc: 'eu',
     //
     // ==================
     // Specify Test Files
@@ -55,13 +53,13 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instance available you can make sure that not more than
         // 5 instance gets started at a time.
-        //maxInstances: 5,
-        //
-      {browserName: 'chrome', platform: 'Windows 10', version: 'latest', extendedDebugging: true, build: buildid},
-      {browserName: 'Safari', platform: 'macOS 10.14', version: 'latest', build: buildid},
-      {browserName: 'firefox', platform: 'Windows 7', version: 'latest', extendedDebugging: true, build: buildid},
-      {browserName: 'chrome', platform: 'macOS 10.13', version: 'latest', extendedDebugging: true, build: buildid}
-    ],
+        
+    {
+        maxInstances: 2,
+        testobject_api_key: process.env.TESTOBJECT_API_KEY, //LaszloSwagiOS
+        platformName: 'iOS',
+        plat: '12'
+    }],
     //
     // ===================
     // Test Configurations
@@ -118,7 +116,7 @@ exports.config = {
     // Services take over a specific job you don't want to take care of. They enhance
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
-    services: ['sauce'],
+    services: ['saucerdc'],
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
     // see also: http://webdriver.io/guide/testrunner/frameworks.html
@@ -132,7 +130,7 @@ exports.config = {
     // see also: http://webdriver.io/guide/testrunner/reporters.html
     // reporters: ['dot'],
     reporters: ['dot'],
-    reporterOptions: {
+    reporterOptions: { 
         outputDir: './'
     },
 

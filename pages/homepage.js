@@ -3,13 +3,12 @@ const Page = require('./page');
 
 class HomePage extends Page {
 
-    get username() { return browser.element("#user-name"); };
-    get password() { return browser.element('#password'); };
-    get login_button() { return browser.element('.login-button'); };
+    get username() { return browser.element("~test-Username"); };
+    get password() { return browser.element('~test-Password'); };
+    get login_button() { return browser.element('~test-LOGIN'); };
+    get title_image() { return browser.element('~assets/src/img/swag-labs-logo.png'); };
 
-    get errorText() {
-        return browser.element('h3');
-    };
+    get errorText() { return browser.element('~test-Error message'); };
 
     open() {
        browser.url("http://www.saucedemo.com/");

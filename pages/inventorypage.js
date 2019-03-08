@@ -3,50 +3,47 @@ const Page = require('./page');
 
 class InventoryPage extends Page {
 
-    get productlabel() { 
-        return browser.element('.product_label'); 
-    };
-
-    get invPageURL() {
-        return 'https://www.saucedemo.com/inventory.html';
+    get toggle() {
+        return browser.element('~test-Toggle');
     };
 
     get menuButton() {
-        return browser.element('.bm-burger-button');
+        return browser.element('~test-Menu');
+        ////XCUIElementTypeOther[@name="test-Menu"]/XCUIElementTypeOther
+        //
     };
 
     get logoutLink() {
-        return browser.element('#logout_sidebar_link');
+        return browser.element('~test-LOGOUT');
     };
 
-    get backpackLink() {
-        return browser.element('.add-to-cart-button');
+    get bikelightItem() {
+        return browser.element('//XCUIElementTypeStaticText[contains(@value,"Sauce Labs Bike Light")]//ancestor::*[@name="test-Item"]');
     };
 
-    get cartItemsCount() {
-        return browser.element('.fa-layers-counter.shopping_cart_badge');
+    bikelightAdd() {
+        browser.element('//XCUIElementTypeStaticText[contains(@value,"Sauce Labs Bike Light")]//ancestor::*[@name="test-Item"]').$(`~test-ADD TO CART`).click();
+    }
+
+    get cart() {
+        return browser.element('~test-Cart');
     };
 
-    get cartLink() {
-        return browser.element('#shopping_cart_container > a');
-    };
-
-    returnProductLabel() {
-
-        return this.productlabel;
+    get onCartPage() {
+        return browser.element('~test-Cart Content').getAttribute('label');
     };
 
     getCartItemsCount() {
-        var count = this.cartItemsCount.getText();
+        var count = this.cart.getAttribute('label');
         return count;
     };
 
     clickCart() {
-        this.cartLink.click();
+        this.cart.click();
     };
 
     addToCart() {
-        this.backpackLink.click();
+        this.bikelightAdd();
     };
 
     logout() {
