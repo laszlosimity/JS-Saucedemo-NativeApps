@@ -65,7 +65,7 @@ class CheckoutPageOne extends Base {
     // On smaller devices the keyboard is in front of the submit button, so hide it
     Utils.hideKeyboard(this.firstName);
     // Check if the button is visible, if not scroll to it
-    Gestures.scrollDownToElement(this.continueCheckoutButton, 2);
+    //Gestures.scrollDownToElement(this.continueCheckoutButton, 2);
     // Click on the button
     this.continueCheckoutButton.click();
   }

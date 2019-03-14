@@ -142,26 +142,25 @@ class utils {
    *
    * @return {void}
    */
-  hideKeyboard(element) {
+  hideKeyboard(theelement) {
     // The hideKeyboard is not working on ios devices, so take a different approach
-    if (!driver.isKeyboardShown()){
+    if (!browser.isKeyboardShown()){
       return;
     }
-
-    if (driver.isIOS) {
-      return driver.touchAction({
+    
+    if (browser.isIOS) {
+      return browser.touchAction({
         action: 'tap',
-        x: 0,
-        y: -40,
-        element,
+        x: 20,
+        y: 200,
       });
     }
 
     try {
-      return driver.hideKeyboard('pressKey', 'Done');
+      return browser.hideKeyboard('pressKey', 'Done');
     } catch (e) {
       // Fallback
-      return driver.back();
+      return browser.back();
     }
   }
 }

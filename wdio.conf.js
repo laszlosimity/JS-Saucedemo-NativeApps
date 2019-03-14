@@ -55,7 +55,7 @@ exports.config = {
         // 5 instance gets started at a time.
         
     {
-        maxInstances: 2,
+        maxInstances: 1,
         testobject_api_key: process.env.TESTOBJECT_API_KEY, //LaszloSwagiOS
         platformName: 'iOS',
         plat: '12'

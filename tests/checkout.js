@@ -39,17 +39,15 @@ describe('Sauce Swag purchase flow ', function() {
 
     it ("enters checkout information", function() {
 
-
         theCheckoutPageOne.submitPersonalInfo({firstName: 'laszlo', lastName: 'simity', zip: '90210'});
-
     });
-/*
+
     it ("checksout", function() {
         homePage.annotate(this.test.title);
         cartPage.clickCheckoutContinue();
         expect(cartPage.getHeaderElText()).to.equal('Checkout: Complete!');
     });
-    */
+    
 
     it ("logs out", function() {
         invPage.logout();
