@@ -6,7 +6,7 @@ class Page {
     get title() { return browser.getTitle(); };   
 
     annotate(name) {
-    	browser.execute("sauce:context=" + name);
+    	//browser.execute("sauce:context=" + name);
     }
 
 }

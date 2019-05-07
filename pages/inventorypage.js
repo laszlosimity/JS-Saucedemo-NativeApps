@@ -4,33 +4,33 @@ const Page = require('./page');
 class InventoryPage extends Page {
 
     get toggle() {
-        return browser.element('~test-Toggle');
+        return $('~test-Toggle');
     };
 
     get menuButton() {
-        return browser.element('~test-Menu');
+        return $('~test-Menu');
         ////XCUIElementTypeOther[@name="test-Menu"]/XCUIElementTypeOther
         //
     };
 
     get logoutLink() {
-        return browser.element('~test-LOGOUT');
+        return $('~test-LOGOUT');
     };
 
     get bikelightItem() {
-        return browser.element('//XCUIElementTypeStaticText[contains(@value,"Sauce Labs Bike Light")]//ancestor::*[@name="test-Item"]');
+        return $('//XCUIElementTypeStaticText[contains(@value,"Sauce Labs Bike Light")]//ancestor::*[@name="test-Item"]');
     };
 
     bikelightAdd() {
-        browser.element('//XCUIElementTypeStaticText[contains(@value,"Sauce Labs Bike Light")]//ancestor::*[@name="test-Item"]').$(`~test-ADD TO CART`).click();
+        $('//XCUIElementTypeStaticText[contains(@value,"Sauce Labs Bike Light")]//ancestor::*[@name="test-Item"]').$(`~test-ADD TO CART`).click();
     }
 
     get cart() {
-        return browser.element('~test-Cart');
+        return $('~test-Cart');
     };
 
     get onCartPage() {
-        return browser.element('~test-Cart Content').getAttribute('label');
+        return $('~test-Cart Content').getAttribute('label');
     };
 
     getCartItemsCount() {

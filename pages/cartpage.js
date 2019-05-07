@@ -3,23 +3,23 @@ const Page = require('./page');
 class CartPage extends Page {
 
     get cartHeader() {
-        return browser.element('.subheader_label');
+        return $('.subheader_label');
     }
     
     get checkOutContinueButton() {
-        return browser.element('.cart_checkout_link');
+        return $('.cart_checkout_link');
     }
 
     get firstNameText() {
-        return browser.element('.checkout-input:nth-child(1)');
+        return $('.checkout-input:nth-child(1)');
     }
 
     get lastNameText() {
-        return browser.element('.checkout-input:nth-child(2)');
+        return $('.checkout-input:nth-child(2)');
     }
 
     get zipCodeText() {
-        return browser.element('.checkout-input:nth-child(3)');
+        return $('.checkout-input:nth-child(3)');
     }
 
     getHeaderElText() {
